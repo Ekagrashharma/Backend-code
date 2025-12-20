@@ -1,0 +1,14 @@
+{
+  "name": "back01",
+  "version": "1.0.0",
+  "description": "backend practive code",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ekagra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
