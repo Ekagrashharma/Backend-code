@@ -1,5 +1,17 @@
-import mongoose from "mongoose";
-import { DATABASE_NAME } from "./contanst";
+import dotenv from "dotenv";
+import connectDB from "./DB/index.js";
+
+
+dotenv.config({ path: "./env" });
+
+console.log(process.env.MONGODB_URI);
+
+
+connectDB()
+
+/*
+
+************************FIRST APPROACH ********************************
 
 import express from "express";
 
@@ -21,3 +33,4 @@ app.listen(process.env.PORT,()=>(
     throw err;
   }
 })();
+*/
