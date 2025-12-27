@@ -14,9 +14,9 @@ const app = express();
   import userRouter from "./routes/user.routes.js";
 
   // routes decleration 
-  app.use("api/v1/users", userRouter)
+  app.use("/api/v1/users", userRouter)
 
-  // http:/localhost:8000/users/registor
+  // http:/localhost:8000/api/v1/users/registor
 
 
 export { app };
