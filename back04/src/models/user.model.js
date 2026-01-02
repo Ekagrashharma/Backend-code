@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const userSchema = new Schema(
   {
     username: {
-      type: string,
+      type: String,
       require: true,
       unique: true,
       lowercase: true,
@@ -11,35 +11,35 @@ const userSchema = new Schema(
       index: true,
     },
     email: {
-      type: string,
+      type: String,
       require: true,
       unique: true,
       trim: true,
     },
     fullName: {
-      type: string,
+      type: String,
       require: true,
       trim: true,
     },
     avatar: {
-      type: string, // cloudnary url
+      type: String, // cloudnary url
       required: true,
     },
     coverImage: {
-      type: string, // cloudnary url
+      type: String, // cloudnary url
     },
     watchHistory: [
       {
-        type: Schema.model.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "video",
       },
     ],
     password: {
-      type: string,
+      type: String,
       require: true,
     },
     refreshTokens: {
-      type: string,
+      type: String,
     },
   },{ timestamps: true }
 );
