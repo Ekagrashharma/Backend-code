@@ -1,1 +1,1 @@
-export const DATABASE_NAME = "nitinDB"
+export const DATABASE_NAME = "ekagrashharma_db"
