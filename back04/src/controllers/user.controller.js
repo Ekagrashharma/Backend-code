@@ -11,8 +11,7 @@ const generatAccessAndRefreshToken = async(userId)=>{
         const refreshToken = user.generateRefreshToken()
         
         user.refreshToken = refreshToken
-        await  user.save(validateBeforSave : false)
-
+        await user.save({ validateBeforeSave: false })
         return{accesToken, refreshToken}
 
     } catch (error) {
@@ -84,7 +83,6 @@ const registerUser = asyncHandler( async (req, res) => {
         new apiResponse(200, createdUser, "User registered Successfully")
     )
 
-    const {fullName ,email, username}= req.body
 } )
 
 const loginUser = asyncHandler(async(req, res)=>{
@@ -105,9 +103,7 @@ const isPasswordValid = await user.isPasswordCorrect(password)
             throw new apiError(401, "password is incorrect")
         }
 
-})
-
-const {refreshToken, accesToken} = await generatAccessAndRefreshToken(user._id)
+        const {refreshToken, accesToken} = await generatAccessAndRefreshToken(user._id)
 
 const loggedUser = await User.findById(user._id).select("-password -refreshToken")
 
@@ -128,6 +124,11 @@ const option ={
             "User Logged in succesfully"
         )
     )
+})
+
+const logoutUser = asyncHandler(async(req, res)=>{
+    
+})
 
 export {
     registerUser,
